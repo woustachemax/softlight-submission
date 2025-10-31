@@ -59,7 +59,7 @@ function FigmaConverter() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white p-8">
+    <div className="min-h-screen flex items-center justify-center bg-black p-8">
       <style>{`
         @keyframes fadeInUp {
           from {
@@ -132,21 +132,21 @@ function FigmaConverter() {
         className="h-[90vh] w-[90vh] bg-cover bg-center rounded-xl shadow-2xl relative flex items-center justify-center px-16 py-12 animate-fade-in-scale"
         style={{
           backgroundImage: 'url("/background.webp")',
-          backgroundColor: 'rgba(255,255,255,0.15)',
-          backgroundBlendMode: 'lighten',
-          boxShadow: 'inset 0 0 10px rgba(0,0,0,0.6)',
+          backgroundColor: 'rgba(0,0,0,0.4)',
+          backgroundBlendMode: 'darken',
+          boxShadow: 'inset 0 0 40px rgba(0,0,0,0.7)',
           fontFamily: '"GT Super Display", "Crimson Pro", serif',
         }}
       >
         <div className="w-full max-w-3xl text-white mx-auto">
           <div className="mb-8 animate-fade-in-up delay-100">
             <h1 className="text-4xl font-semibold mb-2 italic">Figma Converter</h1>
-            <p className="text-base text-white">
+            <p className="text-base text-white/90">
               Convert Figma designs to HTML/CSS
             </p>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 p-8 shadow-inner animate-fade-in-up delay-200 transition-all duration-300 hover:bg-white/15 hover:border-white/30">
+          <div className="bg-black/40 backdrop-blur-md rounded-lg border border-white/20 p-8 shadow-xl animate-fade-in-up delay-200 transition-all duration-300 hover:bg-black/50 hover:border-white/30">
             <div className="space-y-6">
               <div className="animate-slide-in-left delay-300">
                 <label className="block text-sm font-medium mb-2">Figma URL</label>
@@ -155,7 +155,7 @@ function FigmaConverter() {
                   value={figmaUrl}
                   onChange={(e) => setFigmaUrl(e.target.value)}
                   placeholder="https://www.figma.com/design/..."
-                  className="w-full px-4 py-2.5 rounded-md border border-white/30 bg-white/10 text-white placeholder:text-white focus:outline-none focus:ring-2 focus:ring-white/40 transition-all duration-300 hover:bg-white/15 focus:scale-[1.01]"
+                  className="w-full px-4 py-2.5 rounded-md border border-white/30 bg-black/30 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-white/40 transition-all duration-300 hover:bg-black/40 focus:scale-[1.01]"
                 />
               </div>
 
@@ -166,7 +166,7 @@ function FigmaConverter() {
                   value={apiKey}
                   onChange={(e) => setApiKey(e.target.value)}
                   placeholder="figd_..."
-                  className="w-full px-4 py-2.5 rounded-md border border-white/30 bg-white/10 text-white placeholder:text-white focus:outline-none focus:ring-2 focus:ring-white/40 transition-all duration-300 hover:bg-white/15 focus:scale-[1.01]"
+                  className="w-full px-4 py-2.5 rounded-md border border-white/30 bg-black/30 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-white/40 transition-all duration-300 hover:bg-black/40 focus:scale-[1.01]"
                 />
                 <p className="text-xs text-neutral-300 mt-2">
                   Get your token from Figma Settings / Personal Access Tokens
@@ -174,13 +174,13 @@ function FigmaConverter() {
               </div>
 
               {error && (
-                <div className="p-4 rounded-md bg-red-500/10 border border-red-700 animate-fade-in-up">
+                <div className="p-4 rounded-md bg-red-500/20 border border-red-700/50 animate-fade-in-up">
                   <p className="text-sm text-red-300">{error}</p>
                 </div>
               )}
 
               {success && (
-                <div className="p-4 rounded-md bg-green-950/50 border border-green-900 animate-fade-in-up">
+                <div className="p-4 rounded-md bg-green-500/20 border border-green-700/50 animate-fade-in-up">
                   <p className="text-sm text-green-300">
                     HTML file downloaded successfully
                   </p>
@@ -190,7 +190,7 @@ function FigmaConverter() {
               <button
                 onClick={convertToHtml}
                 disabled={loading}
-                className="w-full gap-x-3 h-10 px-4 bg-white/20 hover:bg-green-400/10 text-white rounded-md font-medium border border-white/30 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95"
+                className="w-full gap-x-3 h-10 px-4 bg-white/25 hover:bg-green-500/15 text-white rounded-md font-medium border border-white/30 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95"
               >
                 {loading ? (
                   <span className="flex items-center gap-2">
@@ -203,7 +203,7 @@ function FigmaConverter() {
             </div>
           </div>
 
-          <div className="mt-6 p-6 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 animate-fade-in-up delay-300 transition-all duration-300 hover:bg-white/15 hover:border-white/30">
+          <div className="mt-6 p-6 bg-black/40 backdrop-blur-md rounded-lg border border-white/20 animate-fade-in-up delay-300 transition-all duration-300 hover:bg-black/50 hover:border-white/30">
             <h3 className="text-sm font-semibold mb-3">How to Use</h3>
             <ol className="text-sm text-neutral-200 space-y-2 list-decimal list-inside">
               <li className="transition-all duration-200 hover:translate-x-1">Copy your Figma file URL</li>
