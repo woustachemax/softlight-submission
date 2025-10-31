@@ -59,7 +59,7 @@ function FigmaConverter() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black p-8">
+    <div className="min-h-screen flex items-center justify-center bg-black p-4 sm:p-8">
       <style>{`
         @keyframes fadeInUp {
           from {
@@ -129,7 +129,7 @@ function FigmaConverter() {
         }
       `}</style>
       <div
-        className="h-[90vh] w-[90vh] bg-cover bg-center rounded-xl shadow-2xl relative flex items-center justify-center px-16 py-12 animate-fade-in-scale"
+        className="min-h-screen sm:h-auto sm:min-h-[90vh] w-full sm:w-[90vh] sm:max-w-5xl bg-cover bg-center sm:rounded-xl shadow-2xl relative flex items-center justify-center px-4 sm:px-8 lg:px-16 py-8 sm:py-12 animate-fade-in-scale"
         style={{
           backgroundImage: 'url("/background.webp")',
           backgroundColor: 'rgba(0,0,0,0.4)',
